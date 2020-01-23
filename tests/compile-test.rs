@@ -48,7 +48,7 @@ fn default_config() -> compiletest::Config {
     ));
 
     config.build_base = if rustc_test_suite().is_some() {
-        // we don't need access to the stderr files on travis
+        // we don't need access to the stderr files on CI
         let mut path = PathBuf::from(env!("OUT_DIR"));
         path.push("test_build_base");
         path
