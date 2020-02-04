@@ -40,7 +40,7 @@ jobs:
 
   end-failure:
     name: bors remark test finished
-    if: github.event.pusher.name == 'bors' && failure()
+    if: github.event.pusher.name == 'bors' && (failure() || cancelled())
     runs-on: ubuntu-latest
     needs: [remark]
 
